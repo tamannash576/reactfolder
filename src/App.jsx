@@ -1,68 +1,18 @@
-import React, { useInsertionEffect, useState } from 'react'
+import React, { useContext } from 'react'
+import Head from './Component/Head'
+import { usercontext } from './Context/Usercontext'
 
 function App() {
-  /*const student=[{ name:'Tamanna sharma', age:22},
-   {name:'anuj sharma', age:27},
-   {name:'avisha sharma', age:27},
-   {name:'viaan sharma', age:27},
-  
-  ]
-  
-  // map ex
-  
-  const name=student.map(student=>student.name);
-  console.log(name)
+  const { Theme, toggleTheme } = useContext(usercontext)
+  console.log(Theme)
   return (
-   <div>
-     <h1>Student Names:</h1>
-     <ul>
-       {name.map((name, index) => (
-         <li key={index}>{name}</li>
-       ))}
-     </ul>
-   </div>
-  );*/
-
-
-  //filter ex
-
-
-  /*const Usersage = student.filter(s => s.age);
-  console.log(Usersage)*/
-  // find
-  /*const user = student.find(user => user.age===22);
-  console.log(user)*/
-
-
-  // some
-
-
-  /*const scores = [10, 20, 30];
-  const High = scores.some(score => score > 25);
-  console.log(High)*/
-
-  //includes
-
-
-  /*const fruits= ["apple", "banana","mango","cherry"];
-  const Selected = fruits.includes("banana");*/
-  //console.log(Selected)
-
-
-  //indexof
-
-
-  /*const current = "banana";
-  const index = fruits.indexOf(current);
-  console.log(index)*/
-
-  //slice
-
-
-  /*const firstThree = fruits.slice(0, 3);
-  console.log(firstThree)*/
+    <div>
+      <button onClick={toggleTheme}>toggle theme</button>
+      <h1>Current Theme: {Theme}</h1>
+      {/*<Head name={name} /> hierarchy method or props b add hogi fun me tb*/}
+      <Head />
+    </div>
+  )
 }
-
-
 
 export default App
